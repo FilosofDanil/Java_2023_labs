@@ -7,18 +7,19 @@ public class Lamp extends Device {
     private final Bulb bulb;
 
     public Lamp(Bulb bulb, double initialPower, boolean inSocket) {
-        super(initialPower * bulb.getPowerMultiplier(), inSocket);
+        super(initialPower, inSocket);
         this.bulb = bulb;
     }
 
-    public Bulb getBulb() {
-        return bulb;
+    @Override
+    public double getInitialPower() {
+        return super.getInitialPower() * bulb.getPowerMultiplier();
     }
 
     @Override
     public String toString() {
         return "Lamp " +
-                "initialPower=" + super.getInitialPower() +
-                " \n";
+                "initialPower=" + super.getInitialPower() + " " +
+                bulb.toString() + " \n";
     }
 }

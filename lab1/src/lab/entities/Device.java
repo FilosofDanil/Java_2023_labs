@@ -6,6 +6,9 @@ public class Device {
     private boolean inSocket;
 
     public Device(double initialPower, boolean inSocket) {
+        if(initialPower < 0){
+            throw  new IllegalArgumentException("User entered wrong values");
+        }
         this.initialPower = initialPower;
         this.inSocket = inSocket;
     }

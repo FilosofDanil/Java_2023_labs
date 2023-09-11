@@ -10,7 +10,7 @@ import java.util.List;
 public class SortService implements IService {
 
     @Override
-    public String doTask(List<Device> devices) {
+    public String doTask(List<Device> devices){
         Collections.sort(devices, new PowerComparator());
         return "Sorted list: \n" + devices.toString() + "\n";
     }
