@@ -1,14 +1,13 @@
 package lab.entities;
 
 public class Device {
-    private double initialPower;
+    private final double initialPower;
 
-    private boolean inSocket;
+    private final boolean inSocket;
 
     public Device(double initialPower, boolean inSocket) {
-        if(initialPower < 0){
-            throw  new IllegalArgumentException("User entered wrong values");
-        }
+        if(initialPower < 0) throw  new IllegalArgumentException("User entered wrong values");
+
         this.initialPower = initialPower;
         this.inSocket = inSocket;
     }

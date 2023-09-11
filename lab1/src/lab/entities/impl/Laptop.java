@@ -9,13 +9,9 @@ public class Laptop extends Device {
 
     public Laptop(double initialPower, boolean inSocket, String activity) {
         super(initialPower, inSocket);
-        if(activity.equals("playing")){
-            playing = true;
-        } else if(activity.equals("working")){
-            working = true;
-        }else if(activity.equals("surfing")){
-            surfing = true;
-        }
+        if (activity.equals("playing")) playing = true;
+        else if (activity.equals("working")) working = true;
+        else if (activity.equals("surfing")) surfing = true;
     }
 
     @Override
