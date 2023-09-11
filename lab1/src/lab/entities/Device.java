@@ -5,24 +5,16 @@ public class Device {
 
     private boolean inSocket;
 
-    public Device(double initialPower) {
+    public Device(double initialPower, boolean inSocket) {
         this.initialPower = initialPower;
-        this.inSocket = false;
+        this.inSocket = inSocket;
     }
 
     public double getInitialPower() {
         return initialPower;
     }
 
-    public void setInitialPower(double initialPower) {
-        this.initialPower = initialPower;
-    }
-
     public boolean isInSocket() {
         return inSocket;
-    }
-
-    public void turnInTheSocket() {
-        this.inSocket = true;
     }
 }
