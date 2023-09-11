@@ -1,20 +1,20 @@
 package lab.entities;
 
 public class Device {
-    private int initialPower;
+    private double initialPower;
 
     private boolean inSocket;
 
-    public Device(int initialPower) {
+    public Device(double initialPower) {
         this.initialPower = initialPower;
         this.inSocket = false;
     }
 
-    public int getInitialPower() {
+    public double getInitialPower() {
         return initialPower;
     }
 
-    public void setInitialPower(int initialPower) {
+    public void setInitialPower(double initialPower) {
         this.initialPower = initialPower;
     }
 
