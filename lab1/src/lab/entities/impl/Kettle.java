@@ -7,11 +7,12 @@ public class Kettle extends Device {
 
     public Kettle(double initialPower, boolean inSocket, int capacity) {
         super(initialPower, inSocket);
+        if (capacity > 100 || capacity < 0) throw new IllegalArgumentException("Wrong data");
         this.capacity = capacity;
     }
 
     @Override
-    public double getConsumedPower(){
+    public double getConsumedPower() {
         return super.getInitialPower() * capacity / 100;
     }
 

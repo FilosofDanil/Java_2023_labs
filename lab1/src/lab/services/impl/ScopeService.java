@@ -8,24 +8,21 @@ import java.util.List;
 public class ScopeService implements IService {
     private int from;
     private int to;
+    private List<Device> filteredList;
 
     public ScopeService(int from, int to) {
         this.from = from;
         this.to = to;
     }
 
-    public void setFrom(int from) {
-        this.from = from;
-    }
-
-    public void setTo(int to) {
-        this.to = to;
-    }
-
     @Override
     public String doTask(List<Device> devices) {
-        if ((from >= to) || (from < 0 | to < 0)) throw new IllegalArgumentException("User entered wrong filters!");
+        if ((from > to) || (from < 0 | to < 0)) throw new IllegalArgumentException("User entered wrong filters!");
+        filteredList = devices.stream().filter(device -> device.getInitialPower() < to && device.getInitialPower() > from).toList();
+        return "Filtered List: \n" + filteredList.toString() + "\n";
+    }
 
-        return "Filtered List: \n" + devices.stream().filter(device -> device.getInitialPower() < to && device.getInitialPower() > from).toList().toString() + "\n";
+    public List<Device> getFilteredList() {
+        return filteredList;
     }
 }
