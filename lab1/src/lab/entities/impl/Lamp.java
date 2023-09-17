@@ -12,14 +12,14 @@ public class Lamp extends Device {
     }
 
     @Override
-    public double getInitialPower() {
+    public double getConsumedPower(){
         return super.getInitialPower() * bulb.getPowerMultiplier();
     }
 
     @Override
     public String toString() {
-        return "Lamp " +
+        return "\n Lamp " +
                 "initialPower=" + super.getInitialPower() + " " +
-                bulb.toString() + " \n";
+                bulb.toString();
     }
 }

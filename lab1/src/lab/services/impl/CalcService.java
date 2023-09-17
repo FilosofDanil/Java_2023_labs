@@ -9,7 +9,7 @@ public class CalcService implements IService {
 
     @Override
     public String doTask(List<Device> devices) {
-        double summaryPower = devices.stream().filter(Device::isInSocket).mapToDouble(Device::getInitialPower).sum();
+        double summaryPower = devices.stream().filter(Device::isInSocket).mapToDouble(Device::getConsumedPower).sum();
         return "Summary power used (in Wt): \n" + summaryPower + "\n";
     }
 }

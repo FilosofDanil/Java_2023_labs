@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            LabData data = LabData.getInstanse();
+            LabData data = LabData.getInstanсe();
             List<IService> services = List.of(new CalcService(), new ScopeService(50, 100), new SortService());
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("Initial Data: \n" + data.getDevices().toString() + "\n");

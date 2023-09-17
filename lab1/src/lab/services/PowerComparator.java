@@ -7,6 +7,10 @@ import java.util.Comparator;
 public class PowerComparator implements Comparator<Device> {
     @Override
     public int compare(Device d1, Device d2) {
-        return (int) (d1.getInitialPower() - d2.getInitialPower());
+        double result = (d1.getInitialPower() - d2.getInitialPower());
+        if (result < 0 && result > -1) {
+            return  -1;
+        }
+        return (int) result;
     }
 }

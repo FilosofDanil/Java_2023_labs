@@ -15,29 +15,22 @@ public class Laptop extends Device {
     }
 
     @Override
-    public double getInitialPower() {
+    public double getConsumedPower(){
         double performanceUsage = checkPerformanceUsage();
         return super.getInitialPower() * performanceUsage;
     }
 
     private double checkPerformanceUsage() {
         double performance = 0.75;
-        if (working) {
-            performance += 0.25;
-        }
-        if (playing) {
-            performance += 0.75;
-        }
-        if (surfing) {
-            performance += 0.15;
-        }
+        if (working) performance += 0.25;
+        if (playing) performance += 0.75;
+        if (surfing) performance += 0.15;
         return performance;
     }
 
     @Override
     public String toString() {
-        return "Laptop " +
-                "initialPower=" + super.getInitialPower() +
-                " \n";
+        return "\n Laptop " +
+                "initialPower=" + super.getInitialPower();
     }
 }

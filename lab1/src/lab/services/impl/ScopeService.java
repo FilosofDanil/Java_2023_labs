@@ -14,6 +14,14 @@ public class ScopeService implements IService {
         this.to = to;
     }
 
+    public void setFrom(int from) {
+        this.from = from;
+    }
+
+    public void setTo(int to) {
+        this.to = to;
+    }
+
     @Override
     public String doTask(List<Device> devices) {
         if ((from >= to) || (from < 0 | to < 0)) throw new IllegalArgumentException("User entered wrong filters!");

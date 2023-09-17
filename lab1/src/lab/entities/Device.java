@@ -16,6 +16,10 @@ public class Device {
         return initialPower;
     }
 
+    public double getConsumedPower() {
+        return initialPower;
+    }
+
     public boolean isInSocket() {
         return inSocket;
     }
