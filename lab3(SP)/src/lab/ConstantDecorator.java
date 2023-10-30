@@ -1,7 +1,5 @@
 package lab;
 
-import java.text.ParseException;
-
 public class ConstantDecorator extends BasedDecorator {
     public ConstantDecorator(Component component) {
         super(component);
