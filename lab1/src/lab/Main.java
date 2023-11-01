@@ -17,7 +17,7 @@ public class Main {
             LabData data = LabData.getInstanсe();
             List<IService> services = List.of(new CalcService(), new ScopeService(0, 100), new SortService());
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Initial Data: \n" + data.getDevices().toString() + "\n");
+            stringBuilder.append("Initial Data: \n").append(data.getDevices().toString()).append("\n");
             services.forEach(iService -> {
                 ArrayList<Device> mutableList = new ArrayList<>(data.getDevices());
                 String response = iService.doTask(mutableList);
@@ -26,9 +26,9 @@ public class Main {
             });
             System.out.println("LAB1(6) Berkovskyi Danylo IA-11");
             System.out.println(stringBuilder);
+            System.out.println("Success, you'll get max rate for this lab :)");
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
-
     }
 }
