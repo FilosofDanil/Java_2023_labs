@@ -1,6 +1,8 @@
 package lab;
 
-public class DotType {
+import java.io.Serializable;
+
+public class DotType implements Serializable {
     private Character symbol;
 
     public DotType(Character symbol) {
