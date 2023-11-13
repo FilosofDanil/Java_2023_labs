@@ -9,20 +9,10 @@ public class Main {
         System.out.println();
         System.out.println("run");
         person.setState("run");
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println();
+        action(person);
         System.out.println("push state");
         person.setState("push barbel");
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println();
+        action(person);
         System.out.println("Then let's drop our hp down");
         cut(person);
         cut(person);
@@ -38,12 +28,7 @@ public class Main {
         System.out.println("Let's get the treatment");
         person.setState("hospital");
         System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println(person.doAction());
-        System.out.println();
+        action(person);
         System.out.println("Now pushing");
         person.setState("push barbel");
         System.out.println();
@@ -58,6 +43,15 @@ public class Main {
         System.out.println();
         System.out.println("Try to push from the grave");
         person.setState("push barbel");
+    }
+
+    private static void action(Person person) {
+        System.out.println(person.doAction());
+        System.out.println(person.doAction());
+        System.out.println(person.doAction());
+        System.out.println(person.doAction());
+        System.out.println(person.doAction());
+        System.out.println();
     }
 
     public static void cut(Person person){

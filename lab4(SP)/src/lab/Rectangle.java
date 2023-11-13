@@ -1,10 +1,11 @@
 package lab;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Rectangle implements Figure {
+public class Rectangle implements Figure, Protoype, Serializable {
     private int a;
     private int b;
     private List<Dot> dots;
@@ -55,5 +56,26 @@ public class Rectangle implements Figure {
         DotType type = DotFactory.getDotType(symbol);
         Dot dot = new Dot(x, y, type);
         dots.add(dot);
+    }
+
+    @Override
+    public Rectangle deepClone()  {
+        try {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            ObjectOutputStream outputStrm = new ObjectOutputStream(outputStream);
+            outputStrm.writeObject(this);
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+            ObjectInputStream objInputStream = new ObjectInputStream(inputStream);
+            return (Rectangle) objInputStream.readObject();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Rectangle surfaceClone() {
+        return this;
     }
 }
